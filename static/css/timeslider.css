@@ -1,0 +1,215 @@
+#timeslider-top {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  display: none;
+}
+#timeslider-wrapper {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+#timeslider-left {
+  background-image: url(../img/timeslider_left.png);
+  height: 63px;
+  left: 0;
+  position: absolute;
+  width: 134px;
+}
+#timeslider-right {
+  background-image: url(../img/timeslider_right.png);
+  height: 63px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 155px;
+}
+#timeslider {
+  background-image: url(../img/timeslider_background.png);
+  height: 63px;
+  margin: 0 9px;
+  display:block!important;
+}
+#timeslider #timeslider-slider {
+  height: 61px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+#ui-slider-handle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-image: url(../img/crushed_current_location.png);
+  cursor: pointer;
+  height: 61px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 13px;
+}
+#ui-slider-bar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 148px;
+  position: relative;
+  top: 20px;
+}
+#playpause_button,
+#playpause_button_icon {
+  height: 47px;
+  position: absolute;
+  width: 47px;
+}
+#playpause_button {
+  background-image: url(../img/crushed_button_undepressed.png);
+  right: 77px;
+  top: 9px;
+}
+#playpause_button_icon {
+  background-image: url(../img/play.png);
+  left: 0;
+  top: 0;
+}
+.pause#playpause_button_icon {
+  background-image: url(../img/pause.png)
+}
+#leftstar,
+#rightstar,
+#leftstep,
+#rightstep {
+  background: url(../img/stepper_buttons.png) 0 0 no-repeat;
+  height: 21px;
+  overflow: hidden;
+  position: absolute;
+}
+#leftstar {
+  background-position: 0 -44px;
+  right: 34px;
+  top: 8px;
+  width: 30px;
+}
+#rightstar {
+  background-position: -29px -44px;
+  right: 5px;
+  top: 8px;
+  width: 29px;
+}
+#leftstep {
+  background-position: 0 -22px;
+  right: 34px;
+  top: 20px;
+  width: 30px;
+}
+#rightstep {
+  background-position: -29px -22px;
+  right: 5px;
+  top: 20px;
+  width: 29px;
+}
+#timeslider .star {
+  background-image: url(../img/star.png);
+  cursor: pointer;
+  height: 16px;
+  position: absolute;
+  top: 40px;
+  width: 15px;
+}
+#timeslider #timer {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  left: 7px;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  width: 122px;
+}
+.timeslider-bar {
+  background: #f7f7f7;
+  background: -webkit-linear-gradient(#f7f7f7, #f1f1f1 80%);
+  background: -moz-linear-gradient(#f7f7f7, #f1f1f1 80%);
+  background: -o-linear-gradient(#f7f7f7, #f1f1f1 80%);
+  background: -ms-linear-gradient(#f7f7f7, #f1f1f1 80%);
+  background: linear-gradient(#f7f7f7, #f1f1f1 80%);
+  overflow: hidden;
+  padding-top: 3px;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+}
+.timeslider-bar #timeslider-editbar {
+  border-bottom: none;
+  float: right;
+  width: initial;
+}
+.timeslider-bar h1 {
+  margin: 5px
+}
+.timeslider-bar p {
+  margin: 5px
+}
+#authorsList .author {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+#authorsList .author-anonymous {
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+#timeslider-content {
+  display: none;
+  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 120px;
+  width: 100%;
+  z-index: 1;
+  margin: 10px;
+  font-size: 12px;
+}
+
+/* If timeslider is enabled */
+body.timeslider #timeslider-top {
+  display: block;
+}
+body.timeslider #editorcontainer {
+  display: none;
+}
+body.timeslider .column.acl-write {
+  display: none;
+}
+body.timeslider .column {
+  width: auto;
+}
+body.timeslider .popup {
+  width: 185px
+}
+body.timeslider #importexport {
+  top: 99px;
+  width: 185px;
+}
+body.timeslider #timeslider-content {
+  display: block;
+}
+
+/* IE 6/7 fixes */
+* HTML #ui-slider-handle {
+  background-image: url(../img/current_location.gif)
+}
+* HTML #timeslider .star {
+  background-image: url(../img/star.gif)
+}
+* HTML #playpause_button_icon {
+  background-image: url(../img/play.gif)
+}
+* HTML .pause#playpause_button_icon {
+  background-image: url(../img/pause.gif)
+}

@@ -1,0 +1,11 @@
+{
+  "parts": [
+    { "name": "timeslider"
+    , "hooks": { "eejsBlock_styles": "ep_timeslider/index"
+               , "eejsBlock_body": "ep_timeslider/index"
+               , "eejsBlock_editbarMenuRight": "ep_timeslider/index"
+               }
+    , "client_hooks": { "postAceInit": "ep_timeslider/static/js/index" }
+    }
+  ]
+}

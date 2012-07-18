@@ -1,0 +1,10 @@
+{ "name"           : "ep_timeslider"
+, "version"        : "0.0.0"
+, "description"    : "The timeslider for Etherpad-Lite"
+, "homepage"       : "https://github.com/marcelklehr/ep_timeslider"
+, "keywords"       : ["etherpad", "realtime", "collaborative", "editor", "timeslider"]
+, "author"         : "Marcel Klehr <mklehr@gmx.net>"
+, "engines"        : { "node" : ">=0.6.0"
+                     , "npm"  : ">=1.0"
+                     }
+}
