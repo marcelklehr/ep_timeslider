@@ -25,6 +25,7 @@ JSON = require('ep_etherpad-lite/static/js/json2');
 var _ = require('ep_etherpad-lite/static/js/underscore');
 var pad = require('ep_etherpad-lite/static/js/pad.js').pad;
 var padeditor = require('ep_etherpad-lite/static/js/pad_editor.js').padeditor;
+// global clientVars
 
 var export_links;
 
@@ -33,6 +34,9 @@ function init(cb) {
   padeditor.ace.setEditable(false)
   
   var fireWhenAllScriptsAreLoaded = [];
+  
+  // register callback
+  fireWhenAllScriptsAreLoaded.push(cb);
   
   // load the main code
   BroadcastSlider = require('./broadcast_slider').loadBroadcastSlider(fireWhenAllScriptsAreLoaded);
@@ -63,7 +67,10 @@ function init(cb) {
     changesetLoader.handleMessageFromServer(message);
   });
   
-  fireWhenAllScriptsAreLoaded.push(cb);
+  fireWhenAllScriptsAreLoaded.push(function() {
+    BroadcastSlider.setSliderLength(clientVars.collab_client_vars.rev)
+    BroadcastSlider.setSliderPosition(clientVars.collab_client_vars.rev)
+  })
   
   //fire all start functions of these scripts
   for(var i=0;i < fireWhenAllScriptsAreLoaded.length;i++) {

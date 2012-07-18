@@ -465,10 +465,6 @@ function loadBroadcastSlider(fireWhenAllScriptsAreLoaded)
           $("#revision").css('top', "20px");
         }
         
-        $("#timeslider").show();
-        setSliderLength(clientVars.collab_client_vars.rev);
-        setSliderPosition(clientVars.collab_client_vars.rev);
-        
         _.each(clientVars.savedRevisions, function(revision)
         {
           addSavedRevision(revision.revNum, revision);
