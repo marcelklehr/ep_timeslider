@@ -54,7 +54,7 @@ function init(cb) {
   
   // register close event
   $('#timeslider-close a').click(function(e) {
-    e.prefentDefault()
+    e.preventDefault()
     reset()
   })
   

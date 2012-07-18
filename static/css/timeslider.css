@@ -185,10 +185,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   top: 120px;
-  width: 100%;
+  overflow: scroll;
   z-index: 1;
-  margin: 10px;
+  padding: 10px;
   font-size: 12px;
 }
 
