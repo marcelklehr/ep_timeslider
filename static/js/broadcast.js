@@ -103,7 +103,6 @@ function loadBroadcast(pad, fireWhenAllScriptsAreLoaded, BroadcastSlider)
     // generates a jquery element containing HTML for a line
     lineToElement: function(line, aline)
     {
-      debugLog('padContents.lineToElement', line);
       var element = document.createElement("div");
       var emptyLine = (line == '\n');
       var domInfo = domline.createDomLine(!emptyLine, true);
