@@ -28,7 +28,7 @@ var padeditor = require('ep_etherpad-lite/static/js/pad_editor.js').padeditor;
 
 var export_links;
 
-function init() {
+function init(cb) {
   $(document).ready(function() {
     export_links = $('#importexport .exportlink')
   })
@@ -58,6 +58,8 @@ function init() {
     if(message.accessStatus) return;
     changesetLoader.handleMessageFromServer(message);
   });
+  
+  fireWhenAllScriptsAreLoaded.push(cb);
   
   //fire all start functions of these scripts
   for(var i=0;i < fireWhenAllScriptsAreLoaded.length;i++) {
