@@ -131,6 +131,22 @@
   top: 9px;
   width: 122px;
 }
+#timeslider #timeslider-close {
+  position: absolute;
+  top: 1px;
+  right: 6px;
+  z-index: 5;
+  height: 10px;
+  width: 10px;
+}
+#timeslider #timeslider-close a {
+    text-decoration: none;
+    color: #B0B0B0;
+    font-size: 14px;
+}
+#timeslider #timeslider-close a:hover {
+    color: #7B7B7B;
+}
 .timeslider-bar {
   background: #f7f7f7;
   background: -webkit-linear-gradient(#f7f7f7, #f1f1f1 80%);

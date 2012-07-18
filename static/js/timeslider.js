@@ -29,26 +29,30 @@ var padeditor = require('ep_etherpad-lite/static/js/pad_editor.js').padeditor;
 var export_links;
 
 function init(cb) {
-  $(document).ready(function() {
-    export_links = $('#importexport .exportlink')
-  })
   
   padeditor.ace.setEditable(false)
   
   var fireWhenAllScriptsAreLoaded = [];
   
-  //load all script that doesn't work without the clientVars
+  // load the main code
   BroadcastSlider = require('./broadcast_slider').loadBroadcastSlider(fireWhenAllScriptsAreLoaded);
   require('./broadcast_revisions').loadBroadcastRevisions();
   changesetLoader = require('./broadcast').loadBroadcast(pad, fireWhenAllScriptsAreLoaded, BroadcastSlider);
 
   //change export urls when the slider moves
   var export_rev_regex = /(\/\d+)?\/export/
+    , export_links     = $('#importexport .exportlink')
   BroadcastSlider.onSlider(function(revno) {
     export_links.each(function() {
       this.setAttribute('href', this.href.replace(export_rev_regex, '/' + revno + '/export'));
     });
   });
+  
+  // register close event
+  $('#timeslider-close a').click(function(e) {
+    e.prefentDefault()
+    reset()
+  })
   
   // register timeslider for socket messages
   // route the incoming messages
@@ -69,6 +73,9 @@ function init(cb) {
 
 function reset() {
   padeditor.ace.setEditable(true)
+  $('body').removeClass('timeslider')
+  $('#timeslider-content').empty()
 }
 
 exports.init = init;
+exports.reset = reset;
