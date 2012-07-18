@@ -27,6 +27,7 @@
 }
 #timeslider {
   background-image: url(../img/timeslider_background.png);
+  background-color: #F7F7F7;
   height: 63px;
   margin: 0 9px;
   display:block!important;
